@@ -1,11 +1,61 @@
 <h1>
-Routing of links!!
+{{title}}
 </h1>
-<a routerLink="/path4Comp1">path4Comp1</a>
-<a routerLink="/path4Comp2">path4Comp1</a>
+<h2>*********routing of components********</h2>
+<!--<a routerLink="/path4Comp1">path4Comp1</a> &nbsp; <a routerLink="/path4Comp2">path4Comp1</a>-->
 <br>
-<br>
+<!--start Table for component routing -->
+<table class="table table-hover" border="10">
+    <thead>
+        <tr>
+            <td>Comp1</td>
+            <td>Comp2</td>
+        </tr>
+    </thead>
+    <tbody>
+            <td><a routerLink="/path4Comp1">path4Comp1</a></td>
+            <td><a routerLink="/path4Comp2">path4Comp2</a></td>
+    </tbody>
+</table> 
+<!--end Table for component routing -->
 
+<br>
 
 <router-outlet></router-outlet>
+<h2>*********Data binding********</h2>
+Fetching value for employee binded object : {{employee.name}}
+<br>
+
+<h2>  ******If Else Equals with Variables********</h2>
+<p *ngIf="trueFalseVar">if trueFalseVar is true, this will be visible</p>
+<p *ngIf="name=='sachin'">if name is sachin, this will be visible</p>
+
+<h2>  ******If Else Then with Template********</h2>
+<p *ngIf="trueFalseVar; then templateName else anotherTemplate " >if trueFalseVar is true, this will be visible</p>
+<ng-template #templateName>templateName called here</ng-template>
+<ng-template #anotherTemplate>anotherTemplate called here</ng-template>
+<br>
+<h2>*****For Loop ********</h2>
+<div *ngFor="let i of list">
+{{i}} &nbsp;
+</div>
+<br>
+<h2>*****Add Remove Items in list ********</h2>
+<div class="main">
+<h3>!My List!</h3>
+<div class="addItem">
+	<input [(ngModel)]="addItem" placeholder="Add element item" class="addText">
+	<button (click)="pushItemInList()">Add</button>
+</div>
+<ul>
+
+<li *ngFor="let i of list; let ind=index">
+{{i}}
+<span (click)="removeItemInList(ind)"><img src="/assets/icons/close_icon.jpg" alt="Remove Item" style="width:20px;height:20px;"></span>
+</li>
+
+</ul>
+</div>
+
+<br>
 
