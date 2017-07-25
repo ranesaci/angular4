@@ -37,3 +37,16 @@ ul {
 	background-color: green
 }
 
+.container{
+	display: block;
+	position: relative;
+	max-width: 640px;
+	background: #f4f4f4;
+	font: 15px;
+}
+input,select {
+	display: inline-block;
+	color: #3f3f3f;
+	width: 100%;
+}
+

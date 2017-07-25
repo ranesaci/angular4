@@ -1,0 +1,16 @@
+<br>
+<h2>*****Model Driven forms ********</h2>
+<h2>&nbsp;&nbsp; Sample Form</h2>
+<form class='container' [formGroup]="myform" (ngSubmit)="onSubmit(myform.value)">
+<input type="text" name="firstname" placeholder="firstname" style="width: auto" formControlName="firstname">
+<br>
+<input type="text" name="lastname" placeholder="lastname" style="width: auto" formControlName="lastname">
+<br>
+<select name="languages"  formControlName="languages">
+<option value="angular2">angular2</option>
+<option value="angular3">angular3</option>
+<option value="angular4">angular4</option>
+</select>
+<br><br>
+<input type="submit" value="Click Here!!!">
+</form>

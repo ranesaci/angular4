@@ -10,11 +10,15 @@
         <tr>
             <td>Comp1</td>
             <td>Comp2</td>
+            <td>templateDriven</td>
+             <td>modelDriven</td>
         </tr>
     </thead>
     <tbody>
             <td><a routerLink="/path4Comp1">path4Comp1</a></td>
             <td><a routerLink="/path4Comp2">path4Comp2</a></td>
+            <td><a routerLink="/templateDriven">templateDriven</a></td>
+            <td><a routerLink="/modelDriven">modelDriven</a></td>
     </tbody>
 </table> 
 <!--end Table for component routing -->
@@ -56,6 +60,67 @@ Fetching value for employee binded object : {{employee.name}}
 
 </ul>
 </div>
+<h2>*****Pipe fiters ********</h2>
+employee.name in uppercase using pipe: {{employee.name | uppercase}}
+<br>
+date using pipe : {{birthday|date:'shortDate'}}
+<br>
+date using pipe : {{birthday | date:'fullDate'|uppercase}}
+<br>
+<h2>*****Custom Pipe fiters ********</h2>
+pipearray in ascending order: {{pipearray | sort: 'ascending'}}
+<br>
+pipearray in descending order: {{pipearray | sort: 'descending'}}
+<br>
+ <h2>*****Template Driven forms ********</h2>
+<h2>&nbsp;&nbsp; Sample Form</h2>
+<form class='container' #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+<input type="text" name="firstname" placeholder="firstname" style="width: auto" ngModel>
+<br>
+<input type="text" name="lastname" placeholder="lastname" style="width: auto" ngModel>
+<br>
+<select name="languages" style="width: auto" ngModel>
+<option value="angular2">angular2</option>
+<option value="angular3">angular3</option>
+<option value="angular4">angular4</option>
+</select>
+<br><br>
+<input type="submit" value="Click Here!!!">
+</form> 
 
 <br>
+<!-- <h2>*****Model Driven forms ********</h2>
+<h2>&nbsp;&nbsp; Sample Form</h2>
+<form class='container' [formGroup]="myformModel" (ngSubmit)="onSubmit(form.value)">
+<input type="text" name="firstname1" placeholder="firstname1" style="width: auto" formControlName="firstname1">
+<br>
+<input type="text" name="lastname1" placeholder="lastname1" style="width: auto" formControlName="lastname1">
+<br>
+<select name="languages1"  formControlName="languages1">
+<option value="angular2">angular2</option>
+<option value="angular3">angular3</option>
+<option value="angular4">angular4</option>
+</select>
+<br><br>
+<input type="submit" value="Click Here!!!">
+</form> -->
+
+<!-- <h2>*****Converters Use ********</h2>
+<h2>&nbsp;&nbsp; Sample Form</h2>
+<form class='container' [formGroup]="converterForm" (ngSubmit)="onSubmit(converterForm.value)">
+<input type="text" name="decimal" placeholder="decimal" style="width: auto" formControlName="decimal" (ngModelChange) = "decimalChaged(oldValue, newValue= $event)">
+<br>
+<input type="text" name="octal" placeholder="octal" style="width: auto" formControlName="octal">
+<br>
+<input type="text" name="binary" placeholder="binary" style="width: auto" formControlName="binary">
+<br>
+<input type="text" name="hex" placeholder="hex" style="width: auto" formControlName="hex">
+<br>
+<br>
+<input type="submit" value="Click Here!!!">
+</form> -->
+
+<br>
+
+
 
