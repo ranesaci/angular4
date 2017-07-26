@@ -1,0 +1,14 @@
+<h2>*****Converters Use ********</h2>
+<h2>&nbsp;&nbsp; Sample Form</h2>
+<form class='container' [formGroup]="form123" (ngSubmit)="onSubmit(form123.value)">
+decimal:<input type="text" name="decimal" placeholder="decimal" style="width: auto" formControlName="decimal" (ngModelChange) = "decimalChaged(oldValue, newValue= $event)">
+<br>
+octal:<input type="text" name="octal" placeholder="octal" style="width: auto" formControlName="octal" (ngModelChange) = "decimalChaged(oldValue, newValue= $event)">
+<br>
+binary:<input type="text" name="binary" placeholder="binary" style="width: auto" formControlName="binary" (ngModelChange) = "decimalChaged(oldValue, newValue= $event)">
+<br>
+hex:<input type="text" name="hex" placeholder="hex" style="width: auto" formControlName="hex" (ngModelChange) = "decimalChaged(oldValue, newValue= $event)">
+<br>
+<br>
+<input type="submit" value="Click Here!!!">
+</form>
